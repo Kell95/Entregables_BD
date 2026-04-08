@@ -2,9 +2,10 @@
 
 # Entregables_BD
 
-Sprint 1
+**Sprint 1**
 
 Kelly Julieth Arango Henao
+
 Carlos Andrés Cordoba
 
 Sistema: Motor de Scoring de Riesgo Crediticio
