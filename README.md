@@ -150,6 +150,7 @@ WHERE evaluation_id = :evaluationId;
 
 - ¿Cómo se distribuyen los clientes por nivel de riesgo?
 Se usa para reportes del negocio.
+
 ```sql
 SELECT risk_level, COUNT(*) AS total
 FROM evaluation
