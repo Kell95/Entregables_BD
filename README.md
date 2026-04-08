@@ -11,31 +11,31 @@ Sistema: Motor de Scoring de Riesgo Crediticio
 
 1. Definición de entidades a partir de las reglas de negocio del módulo
    
-**Applicant (Solicitante)**
+- **Applicant (Solicitante)**
 
 Persona que solicita un crédito dentro del sistema.
 
-**FinancialData (Datos Financieros)**
+- **FinancialData (Datos Financieros)**
 
 Información financiera que describe la capacidad económica del solicitante.
 
-**Evaluation (Evaluación)**
+- **Evaluation (Evaluación)**
 
 Proceso que calcula el nivel de riesgo crediticio de un solicitante.
 
-**EvaluationDetail (Detalle de Evaluación)**
+- **EvaluationDetail (Detalle de Evaluación)**
 
 Conjunto de datos que explican cómo se calcula el puntaje de una evaluación.
 
-**CreditDecision (Decisión de Crédito)**
+- **CreditDecision (Decisión de Crédito)**
 
 Resultado que determina si un crédito es aprobado, rechazado o enviado a revisión.
 
-**ScoringModel (Modelo de Scoring**)
+- **ScoringModel (Modelo de Scoring**)
 
 Estructura que define cómo se calcula el riesgo crediticio.
 
-**ScoringVariable (Variable de Scoring)**
+- **ScoringVariable (Variable de Scoring)**
 
 Factor que influye en el cálculo del puntaje de riesgo.
 
