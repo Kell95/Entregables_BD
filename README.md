@@ -39,39 +39,39 @@ Estructura que define cómo se calcula el riesgo crediticio.
 
 Factor que influye en el cálculo del puntaje de riesgo.
 
-**ModelVariable**
+- **ModelVariable**
 
 Relación que asigna un peso a cada variable dentro de un modelo de scoring.
 
-**VariableRange**
+- **VariableRange**
 
 Rangos que permiten evaluar variables numéricas dentro del modelo.
 
-**VariableCategory**
+- **VariableCategory**
 
 Categorías que permiten evaluar variables cualitativas dentro del modelo.
 
-**KnockoutRule (Regla de Exclusión)**
+- **KnockoutRule (Regla de Exclusión)**
 
 Condición que descalifica automáticamente a un solicitante.
 
-**AppUser (Usuario del Sistema)**
+- **AppUser (Usuario del Sistema)**
 
 Persona que accede y opera el sistema según un rol asignado.
 
-**RolePermission**
+- **RolePermission**
 
 Configuración que define qué acciones puede realizar cada rol en el sistema.
 
-**AuditLog**
+- **AuditLog**
 
 Rregistro que almacena las acciones realizadas dentro del sistema para auditoría.
 
-**TokenBlacklist**
+- **TokenBlacklist**
 
 Conjunto de tokens que han sido invalidados para evitar su reutilización.
 
-**AuthenticationLog**
+- **AuthenticationLog**
 
 Registro que documenta los eventos de autenticación de los usuarios.
 
@@ -163,6 +163,7 @@ Permite ver el detalle del cálculo.
 SELECT *
 FROM evaluation_detail
 WHERE evaluation_id = :evaluationId;
+```
 
 - ¿Cómo se distribuyen los clientes por nivel de riesgo?
 Se usa para reportes del negocio.
@@ -171,6 +172,7 @@ Se usa para reportes del negocio.
 SELECT risk_level, COUNT(*) AS total
 FROM evaluation
 GROUP BY risk_level;
+```
 
  **Consultas sobre decisiones de crédito**
 
