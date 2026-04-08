@@ -64,7 +64,7 @@ Registro que documenta los eventos de autenticación de los usuarios.
    
 3. Principales consultas identificadas o preguntas a responder del módulo
 
-** Consultas sobre solicitantes**
+**Consultas sobre solicitantes**
       
 - ¿El solicitante ya existe en el sistema?
 Permite validar que no se registren personas duplicadas.
@@ -92,7 +92,7 @@ LIMIT :limit OFFSET :offset;
 
  **Consultas sobre datos financieros**
  
--¿Cuál es el historial financiero de un solicitante?
+- ¿Cuál es el historial financiero de un solicitante?
 Permite ver todas las versiones registradas.
 
 SELECT *
@@ -109,7 +109,7 @@ WHERE applicant_id = :id
 ORDER BY version DESC
 LIMIT 1;
 
--¿Qué solicitantes tienen alto nivel de endeudamiento?
+- ¿Qué solicitantes tienen alto nivel de endeudamiento?
 Ayuda a identificar posibles riesgos.
 
 SELECT applicant_id, deuda_total, ingresos_mensuales
@@ -142,7 +142,7 @@ GROUP BY risk_level;
 
  **Consultas sobre decisiones de crédito**
 
--¿Qué decisiones se han tomado?
+- ¿Qué decisiones se han tomado?
 Permite ver todas las decisiones registradas.
 
 SELECT *
@@ -175,21 +175,21 @@ WHERE email = :email;
 
 **Consultas de auditoría**
 
- -¿Qué acciones ha realizado un usuario?
+ - ¿Qué acciones ha realizado un usuario?
 Permite revisar su actividad.
 
 SELECT *
 FROM audit_log
 WHERE actor = :usuario;
 
--¿Qué acciones ocurrieron en un periodo de tiempo?
+- ¿Qué acciones ocurrieron en un periodo de tiempo?
 Permite hacer seguimiento por fechas.
 
 SELECT *
 FROM audit_log
 WHERE created_at BETWEEN :fecha_desde AND :fecha_hasta;
 
--¿Qué cambios se hicieron sobre una entidad?
+- ¿Qué cambios se hicieron sobre una entidad?
 Permite ver historial de modificaciones.
 
 SELECT *
@@ -197,7 +197,7 @@ FROM audit_log
 WHERE entity_type = 'applicant'
 AND entity_id = :id;
 
--¿Cuántos intentos fallidos de login han ocurrido?
+- ¿Cuántos intentos fallidos de login han ocurrido?
 Ayuda a detectar problemas de seguridad.
 
 SELECT COUNT(*)
