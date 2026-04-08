@@ -80,7 +80,7 @@ SELECT *
 FROM applicant
 WHERE id = :id;
 
--¿Qué solicitantes coinciden con una búsqueda?
+- ¿Qué solicitantes coinciden con una búsqueda?
 Permite buscar por nombre o identificación, sin importar mayúsculas o minúsculas y con paginación.
 
 SELECT *
@@ -205,5 +205,9 @@ FROM audit_log
 WHERE action = 'LOGIN_FALLIDO';
 
 
-5. Definición de modelo lógico con entidades y relaciones definidas (MER) 
-6. Crear modelo físico con columnas y clave primaria (acorde al alcance definido por el Product Owner). 
+5. Definición de modelo lógico con entidades y relaciones definidas (MER)
+   
+<img width="11126" height="9038" alt="Diagrama en blanco (4)" src="https://github.com/user-attachments/assets/d28d445a-eb90-4b1c-b99d-0a029e6fc660" />
+
+
+7. Crear modelo físico con columnas y clave primaria (acorde al alcance definido por el Product Owner). 
