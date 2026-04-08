@@ -207,7 +207,7 @@ WHERE action = 'LOGIN_FALLIDO';
 
 5. Definición de modelo lógico con entidades y relaciones definidas (MER)
    
-<img width="11126" height="9038" alt="Diagrama en blanco (4)" src="https://github.com/user-attachments/assets/d28d445a-eb90-4b1c-b99d-0a029e6fc660" />
+<img width="14991" height="12079" alt="Diagrama en blanco (8)" src="https://github.com/user-attachments/assets/93e113f6-de9c-431b-b715-b077b3b05c6d" />
 
 
 7. Crear modelo físico con columnas y clave primaria (acorde al alcance definido por el Product Owner). 
