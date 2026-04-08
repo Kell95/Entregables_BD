@@ -213,4 +213,5 @@ WHERE action = 'LOGIN_FALLIDO';
 7. Crear modelo físico con columnas y clave primaria (acorde al alcance definido por el Product Owner). 
 
 
-<img width="14991" height="12079" alt="Diagrama en blanco (7)" src="https://github.com/user-attachments/assets/89664352-ab2c-4aaf-96e5-4bfb3ef68174" />
+<img width="14991" height="11911" alt="Diagrama en blanco (8)" src="https://github.com/user-attachments/assets/fa4fa5dd-7346-408c-bf50-bdad4d32b41e" />
+
