@@ -4,36 +4,36 @@
 
 **Se definieron los siguientes roles dentro del sistema:**
 
-** ADMIN: **
+**ADMIN:**
 Tiene acceso total al sistema. Puede gestionar usuarios, configurar modelos de scoring y supervisar todas las operaciones.
 
-** ANALYST: **
+**ANALYST:**
 Encargado de realizar evaluaciones crediticias. Puede consultar información de solicitantes y ejecutar procesos de scoring.
 
-** SUPERVISOR: **
+**SUPERVISOR:**
 Responsable de revisar y aprobar decisiones crediticias, especialmente en casos que requieren validación adicional.
 
-** AUDITOR: **
+**AUDITOR:**
 Tiene acceso de solo lectura a la información del sistema, con el fin de verificar procesos y garantizar cumplimiento.
 
-** Esquema de seguridad en la base de datos **
+**Esquema de seguridad en la base de datos**
 
-** El control de seguridad se implementa mediante las siguientes tablas: **
+**El control de seguridad se implementa mediante las siguientes tablas: **
 
-** app_user: **
+**app_user:**
 Almacena los usuarios del sistema, incluyendo credenciales, estado de la cuenta y el rol asignado.
 
-** role_permission: **
+**role_permission:**
 Define los permisos asociados a cada rol, indicando qué acciones puede realizar sobre cada recurso (por ejemplo: READ, WRITE, DELETE).
 
-** token_blacklist: **
+**token_blacklist:**
 Permite invalidar tokens de autenticación (JWT), mejorando la seguridad en procesos como cierre de sesión o bloqueo de usuarios.
  
-** audit_log: **
+**audit_log:**
 Registra todas las acciones relevantes realizadas en el sistema, permitiendo trazabilidad y auditoría
 
 
-** Funcionamiento **
+**Funcionamiento**
 
 Cada usuario tiene un rol asignado, y a partir de este rol se determinan sus permisos dentro del sistema.
 Cuando un usuario intenta realizar una acción, el sistema valida si su rol tiene autorización sobre el recurso solicitado.
