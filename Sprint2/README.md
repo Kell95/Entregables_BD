@@ -22,7 +22,8 @@ Sistema: Motor de Scoring de Riesgo Crediticio
     Puedes consultar el script aquí:  [Ver despliegue](https://github.com/Kell95/Entregables_BD/blob/main/Sprint2/despliegue.md)
    
 4. Crear las consultas identificadas o acciones del módulo para las HU correspondientes al Sprint 1 y 2 vs modelo físico.
-   
+
+    Puedes ver las consultas aquí:  [Ver consultas](https://github.com/Kell95/Entregables_BD/blob/main/Sprint2/Consultas.md)
    
 5. Definir volumen de datos por tabla aproximado.
    
