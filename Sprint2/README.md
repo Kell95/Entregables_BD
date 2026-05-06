@@ -25,6 +25,8 @@ Sistema: Motor de Scoring de Riesgo Crediticio
    
    
 5. Definir volumen de datos por tabla aproximado.
+   
+    Puedes consultar el volumén estimado aquí:  [Ver Volumén](https://github.com/Kell95/Entregables_BD/blob/main/Sprint2/Volumen.md)
 
     
 6. Definición de roles y esquema de seguridad para la aplicación en la base de datos relacional.
