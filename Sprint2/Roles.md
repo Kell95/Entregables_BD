@@ -18,7 +18,7 @@ Tiene acceso de solo lectura a la información del sistema, con el fin de verifi
 
 **Esquema de seguridad en la base de datos**
 
-**El control de seguridad se implementa mediante las siguientes tablas: **
+**El control de seguridad se implementa mediante las siguientes tablas:**
 
 **app_user:**
 Almacena los usuarios del sistema, incluyendo credenciales, estado de la cuenta y el rol asignado.
