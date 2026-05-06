@@ -103,7 +103,7 @@ WHERE jti = 'jwt-token-123456'
 ```
 **HU-002 ROLES**
 
-Tablas:app_user, role_permission
+Tablas: app_user, role_permission
 
 - Permisos
   
@@ -122,7 +122,7 @@ WHERE role = 'ANALYST'
   AND resource = 'APPLICANT'
   AND action = 'CREATE';
 ```
--Crear usuario
+- Crear usuario
 
 ```sql
 INSERT INTO app_user (id, username, email, password_hash, role, enabled, password_changed_at, created_at, created_by)
@@ -191,7 +191,7 @@ SET employment_type = 'INDEPENDENT',
 WHERE id = 'cccccccc-cccc-cccc-cccc-cccccccccccc';
 ```
 
--Auditoría cambio
+- Auditoría cambio
 
 ```sql
 INSERT INTO applicant_edit_audit (
@@ -212,7 +212,7 @@ VALUES (
 
 Tablas: financial_data
 
--Insertar datos
+- Insertar datos
 
 ```sql
 INSERT INTO financial_data (
@@ -252,7 +252,7 @@ VALUES (
 
 **HU-012 EVALUACIÓN**
 
-Tablas:evaluation, evaluation_detail
+Tablas: evaluation, evaluation_detail
 
 - Guardar evaluación
 
@@ -276,7 +276,7 @@ VALUES (
   'analista01'
 );
 ```
-Detalle
+- Detalle
 
 ```sql
 INSERT INTO evaluation_detail (
@@ -299,7 +299,7 @@ VALUES (
 
 **HU-013 DECISIÓN**
 
-Tablas:credit_decision
+Tablas: credit_decision
 
 ```sql
 INSERT INTO credit_decision (
