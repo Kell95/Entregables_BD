@@ -2,7 +2,7 @@
 # 6. Definición de roles y esquema de seguridad para la aplicación en la base de datos relacional.
 
 
-** Se definieron los siguientes roles dentro del sistema: **
+**Se definieron los siguientes roles dentro del sistema:**
 
 ** ADMIN: **
 Tiene acceso total al sistema. Puede gestionar usuarios, configurar modelos de scoring y supervisar todas las operaciones.
