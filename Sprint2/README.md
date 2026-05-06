@@ -28,3 +28,5 @@ Sistema: Motor de Scoring de Riesgo Crediticio
 
     
 6. Definición de roles y esquema de seguridad para la aplicación en la base de datos relacional.
+
+      Puedes consultar los roles y esquema de seguridad aquí:  [Ver roles](https://github.com/Kell95/Entregables_BD/blob/main/Sprint2/Roles.md)
