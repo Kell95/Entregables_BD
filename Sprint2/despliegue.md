@@ -206,7 +206,7 @@ CREATE TABLE knockout_rule (
 
 ```
 
-# EVALUACION
+# EVALUACIÓN
 
 ```sql
 
@@ -248,7 +248,7 @@ CREATE TABLE evaluation_knockout (
 );
  ```
 
-# DECISION CREDITICIA
+# DECISIÓN CREDITICIA
 
 ```sql
 
@@ -266,7 +266,7 @@ CREATE TABLE credit_decision (
 );
 
 ``` 
- # SIMULACION
+ # SIMULACIÓN
 
 ```sql
 CREATE TABLE simulation_scenario (
