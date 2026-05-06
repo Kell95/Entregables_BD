@@ -17,7 +17,7 @@ Sistema: Motor de Scoring de Riesgo Crediticio
    
 3. Crear el script de despliegue de estructuras para el motor de Base de Datos.
 
-  Ver # [despliegue] (https://github.com/Kell95/Entregables_BD/blob/main/Sprint2/despliegue.md)
+  Ver # [despliegue](https://github.com/Kell95/Entregables_BD/blob/main/Sprint2/despliegue.md)
    
 4. Crear las consultas identificadas o acciones del módulo para las HU correspondientes al Sprint 1 y 2 vs modelo físico.
    
