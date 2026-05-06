@@ -1,7 +1,7 @@
 
 3. Crear el script de despliegue de estructuras para el motor de Base de Datos.
 
-#SEGURIDAD
+# SEGURIDAD
 
 ```sql
 
@@ -54,7 +54,7 @@ CREATE TABLE audit_log (
 
 ```
 
-#SOLICITANTE
+# SOLICITANTE
 
 ```sql
 
@@ -85,8 +85,9 @@ CREATE TABLE applicant_edit_audit (
     changed_at   TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
     changed_by   VARCHAR(100) NOT NULL
 );
+```
 
-#DATOS FINANCIEROS
+# DATOS FINANCIEROS
 
 
 ```sql
@@ -114,12 +115,10 @@ CREATE TABLE financial_data (
 
 
 ```
-#VARIABLES DE SCORING
+# VARIABLES DE SCORING
 
  ```sql
 
-
- 
 CREATE TABLE scoring_variable (
     id            UUID         PRIMARY KEY DEFAULT 
     name          VARCHAR(100) NOT NULL UNIQUE,
@@ -154,7 +153,7 @@ CREATE TABLE variable_category (
 );
 
 ```
-#MODELO DE SCORING
+# MODELO DE SCORING
  
 ```sql
 
@@ -207,7 +206,7 @@ CREATE TABLE knockout_rule (
 
 ```
 
-#EVALUACION
+# EVALUACION
 
 ```sql
 
@@ -249,7 +248,7 @@ CREATE TABLE evaluation_knockout (
 );
  ```
 
-#DECISION CREDITICIA
+# DECISION CREDITICIA
 
 ```sql
 
@@ -267,7 +266,7 @@ CREATE TABLE credit_decision (
 );
 
 ``` 
- #SIMULACION
+ # SIMULACION
 
 ```sql
 CREATE TABLE simulation_scenario (
