@@ -16,6 +16,9 @@ Sistema: Motor de Scoring de Riesgo Crediticio
 
    
 2. Crear modelo físico con columnas y dimensión completos, claves primarias, constraints y claves foráneas.
+
+  <img width="14991" height="11911" alt="modelo" src="https://github.com/user-attachments/assets/06ff9e2a-650d-462e-8e13-764db036cdb3" />
+
    
 3. Crear el script de despliegue de estructuras para el motor de Base de Datos.
 
