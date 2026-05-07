@@ -31,7 +31,7 @@ authentication_log: Registra cada evento de autenticación: logins exitosos, int
 
 Cada usuario tiene exactamente un rol asignado. Al autenticarse, el sistema genera un JWT que contiene el identificador del usuario, su rol y la fecha de expiración. En cada petición al API, un middleware de autorización verifica que el rol del token tenga permiso sobre el recurso solicitado consultando la tabla role_permission. Si no tiene autorización, el sistema responde con HTTP 403. Los cambios de rol toman efecto de forma inmediata, invalidando el token activo del usuario.
 
-Este enfoque permite controlar el acceso a la información, restringir operaciones según el tipo de usuario, mantener trazabilidad completa de las acciones realizadas y cumplir con requisitos regulatorios de auditoría.
+Permite controlar el acceso a la información, restringir operaciones según el tipo de usuario, mantener trazabilidad completa de las acciones realizadas y cumplir con requisitos regulatorios de auditoría:
 
 - Restringir operaciones según el tipo de usuario
 - Garantizar la seguridad de los datos
