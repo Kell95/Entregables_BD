@@ -11,8 +11,10 @@ Carlos Andrés Cordoba
 # Sistema: Motor de Scoring de Riesgo Crediticio
 
 1. Refinar el Modelo Entidad Relación (MER).
+
    
 <img width="21360" height="10052" alt="image" src="https://github.com/user-attachments/assets/d20a4816-5301-4202-bdef-bb18577ba014" />
+
 
 
 2. Crear o refinar el script de creación de objetos en general con Trigger y procedimientos para las HU desarrolladas. 
@@ -20,6 +22,7 @@ Carlos Andrés Cordoba
 # Auditoría de Solicitantes 
 
 El trigger compara los valores anteriores y nuevos de cada atributo. Cuando detecta una diferencia, registra el cambio en la tabla de auditoría.
+
 ```sql
 
 CREATE FUNCTION fn_applicant_edit_audit()
@@ -164,6 +167,7 @@ BEGIN
 
 END;
 ```
+
 ```sql
 CREATE TRIGGER trg_applicant_edit_audit
 AFTER UPDATE
@@ -171,6 +175,7 @@ ON applicant
 FOR EACH ROW
 EXECUTE FUNCTION fn_applicant_edit_audit();
 ```
+
 # Escalamiento
 
 Este trigger asigna automáticamente una fecha límite de resolución cuando una solicitud es escalada para revisión por parte de un supervisor. De esta forma, se asegura el seguimiento oportuno de los casos pendientes.
@@ -193,6 +198,7 @@ BEGIN
 
 END;
 ```
+
 ```sql
 CREATE TRIGGER trg_credit_decision_escalated
 BEFORE INSERT OR UPDATE
@@ -200,6 +206,7 @@ ON credit_decision
 FOR EACH ROW
 EXECUTE FUNCTION fn_set_escalation_deadline();
 ```
+
 # Auditoría de Decisiones Crediticias
 
 Este trigger registra automáticamente cualquier modificación realizada sobre una decisión de crédito, permitiendo conocer cuándo ocurrió el cambio y cuál fue el nuevo estado asignado.
@@ -227,6 +234,7 @@ BEGIN
 
 END;
 ```
+
 ```sql
 CREATE TRIGGER trg_credit_decision_audit
 AFTER UPDATE
@@ -234,6 +242,7 @@ ON credit_decision
 FOR EACH ROW
 EXECUTE FUNCTION fn_credit_decision_audit();
 ```
+
 3. Refinar el análisis del volumen de datos de las entidades identificadas
 
    <img width="1305" height="750" alt="img1" src="https://github.com/user-attachments/assets/ca1fd5bd-3ee6-47c2-809d-f3e5aa2fbb38" />
