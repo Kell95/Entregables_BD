@@ -231,4 +231,10 @@ ON credit_decision
 FOR EACH ROW
 EXECUTE FUNCTION fn_credit_decision_audit();
 ```
-3. Refinar el análisis del volumen de datos de las entidades identificadas 
+3. Refinar el análisis del volumen de datos de las entidades identificadas
+
+   <img width="1305" height="750" alt="img1" src="https://github.com/user-attachments/assets/ca1fd5bd-3ee6-47c2-809d-f3e5aa2fbb38" />
+   <img width="1298" height="854" alt="img2" src="https://github.com/user-attachments/assets/a49f201d-ec94-400f-afaa-713fef6adf06" />
+   <img width="1292" height="389" alt="img3" src="https://github.com/user-attachments/assets/adefadef-c234-44f2-86c3-485530a2329f" />
+
+
