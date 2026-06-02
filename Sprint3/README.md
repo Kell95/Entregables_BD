@@ -11,6 +11,9 @@ Carlos Andrés Cordoba
 # Sistema: Motor de Scoring de Riesgo Crediticio
 
 1. Refinar el Modelo Entidad Relación (MER).
+   
+<img width="21360" height="10052" alt="image" src="https://github.com/user-attachments/assets/d20a4816-5301-4202-bdef-bb18577ba014" />
+
 
 2. Crear o refinar el script de creación de objetos en general con Trigger y procedimientos para las HU desarrolladas. 
 
