@@ -25,147 +25,84 @@ El trigger compara los valores anteriores y nuevos de cada atributo. Cuando dete
 
 ```sql
 
-CREATE FUNCTION fn_applicant_edit_audit()
+CREATE OR REPLACE FUNCTION fn_applicant_edit_audit()
 RETURNS TRIGGER
-AS
+LANGUAGE plpgsql
+AS $$
 BEGIN
 
-    IF OLD.identification_encrypted <> NEW.identification_encrypted THEN
-
-        INSERT INTO applicant_edit_audit (
+    IF OLD.identification_encrypted IS DISTINCT FROM NEW.identification_encrypted THEN
+        INSERT INTO applicant_edit_audit(
             applicant_id,
             field_name,
             old_value,
             new_value,
             changed_at
         )
-        VALUES (
+        VALUES(
             NEW.id,
             'identification_encrypted',
-            OLD.identification_encrypted,
-            NEW.identification_encrypted,
+            OLD.identification_encrypted::text,
+            NEW.identification_encrypted::text,
             CURRENT_TIMESTAMP
         );
-
     END IF;
 
-    IF OLD.identification_hash <> NEW.identification_hash THEN
-
-        INSERT INTO applicant_edit_audit (
+    IF OLD.identification_hash IS DISTINCT FROM NEW.identification_hash THEN
+        INSERT INTO applicant_edit_audit(
             applicant_id,
             field_name,
             old_value,
             new_value,
             changed_at
         )
-        VALUES (
+        VALUES(
             NEW.id,
             'identification_hash',
-            OLD.identification_hash,
-            NEW.identification_hash,
+            OLD.identification_hash::text,
+            NEW.identification_hash::text,
             CURRENT_TIMESTAMP
         );
-
     END IF;
 
-    IF OLD.name <> NEW.name THEN
-
-        INSERT INTO applicant_edit_audit (
+    IF OLD.name IS DISTINCT FROM NEW.name THEN
+        INSERT INTO applicant_edit_audit(
             applicant_id,
             field_name,
             old_value,
             new_value,
             changed_at
         )
-        VALUES (
+        VALUES(
             NEW.id,
             'name',
             OLD.name,
             NEW.name,
             CURRENT_TIMESTAMP
         );
-
     END IF;
 
-    IF OLD.birth_date <> NEW.birth_date THEN
-
-        INSERT INTO applicant_edit_audit (
+    IF OLD.birth_date IS DISTINCT FROM NEW.birth_date THEN
+        INSERT INTO applicant_edit_audit(
             applicant_id,
             field_name,
             old_value,
             new_value,
             changed_at
         )
-        VALUES (
+        VALUES(
             NEW.id,
             'birth_date',
-            OLD.birth_date,
-            NEW.birth_date,
+            OLD.birth_date::text,
+            NEW.birth_date::text,
             CURRENT_TIMESTAMP
         );
-
-    END IF;
-
-    IF OLD.employment_type <> NEW.employment_type THEN
-
-        INSERT INTO applicant_edit_audit (
-            applicant_id,
-            field_name,
-            old_value,
-            new_value,
-            changed_at
-        )
-        VALUES (
-            NEW.id,
-            'employment_type',
-            OLD.employment_type,
-            NEW.employment_type,
-            CURRENT_TIMESTAMP
-        );
-
-    END IF;
-
-    IF OLD.monthly_income <> NEW.monthly_income THEN
-
-        INSERT INTO applicant_edit_audit (
-            applicant_id,
-            field_name,
-            old_value,
-            new_value,
-            changed_at
-        )
-        VALUES (
-            NEW.id,
-            'monthly_income',
-            OLD.monthly_income,
-            NEW.monthly_income,
-            CURRENT_TIMESTAMP
-        );
-
-    END IF;
-
-    IF OLD.work_experience_months <> NEW.work_experience_months THEN
-
-        INSERT INTO applicant_edit_audit (
-            applicant_id,
-            field_name,
-            old_value,
-            new_value,
-            changed_at
-        )
-        VALUES (
-            NEW.id,
-            'work_experience_months',
-            OLD.work_experience_months,
-            NEW.work_experience_months,
-            CURRENT_TIMESTAMP
-        );
-
     END IF;
 
     RETURN NEW;
 
 END;
+$$;
 ```
 
 ```sql
@@ -181,22 +118,25 @@ EXECUTE FUNCTION fn_applicant_edit_audit();
 Este trigger asigna automáticamente una fecha límite de resolución cuando una solicitud es escalada para revisión por parte de un supervisor. De esta forma, se asegura el seguimiento oportuno de los casos pendientes.
 
 ```sql
-CREATE FUNCTION fn_set_escalation_deadline()
+CREATE OR REPLACE FUNCTION fn_set_escalation_deadline()
 RETURNS TRIGGER
-AS
+LANGUAGE plpgsql
+AS $$
 BEGIN
 
     IF NEW.decision = 'ESCALATED'
-       AND NEW.resolution_deadline_at IS NULL THEN
+    AND NEW.resolution_deadline_at IS NULL THEN
 
-        SET NEW.resolution_deadline_at =
-            CURRENT_TIMESTAMP + INTERVAL '48 HOURS';
+        NEW.resolution_deadline_at :=
+            CURRENT_TIMESTAMP + INTERVAL '48 hours';
 
     END IF;
 
     RETURN NEW;
 
 END;
+$$;
+
 ```
 
 ```sql
@@ -212,27 +152,34 @@ EXECUTE FUNCTION fn_set_escalation_deadline();
 Este trigger registra automáticamente cualquier modificación realizada sobre una decisión de crédito, permitiendo conocer cuándo ocurrió el cambio y cuál fue el nuevo estado asignado.
 
 ```sql
-CREATE FUNCTION fn_credit_decision_audit()
+CREATE OR REPLACE FUNCTION fn_credit_decision_audit()
 RETURNS TRIGGER
-AS
+LANGUAGE plpgsql
+AS $$
 BEGIN
 
-    INSERT INTO audit_log (
-        entity_type,
-        entity_id,
-        action,
-        event_time
-    )
-    VALUES (
-        'credit_decision',
-        NEW.id,
-        'UPDATE',
-        CURRENT_TIMESTAMP
-    );
+    IF ROW(OLD.*) IS DISTINCT FROM ROW(NEW.*) THEN
+
+        INSERT INTO audit_log(
+            entity_type,
+            entity_id,
+            action,
+            event_time
+        )
+        VALUES(
+            'credit_decision',
+            NEW.id,
+            'UPDATE',
+            CURRENT_TIMESTAMP
+        );
+
+    END IF;
 
     RETURN NEW;
 
 END;
+$$;
+
 ```
 
 ```sql
